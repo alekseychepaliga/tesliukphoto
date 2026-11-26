@@ -145,11 +145,11 @@ window.SITE = {
 
       hero: {
         role: "Фотографка",
-        tagline: "Перегони · Автомобілі · Авто комерція",
+        tagline: "Racing · Automotive · Auto Commerce · Car Stories",
         based: "База — Одеса",
         available: "Працюю по всьому світу",
         scroll: "Гортай",
-        tags: ["01 — Перегони", "02 — Автомобілі", "03 — Авто комерція"]
+        tags: ["01 — Racing", "02 — Automotive", "03 — Auto Commerce", "04 — Car Stories"]
       },
 
       sections: {
@@ -165,12 +165,12 @@ window.SITE = {
       },
 
       filterAll: "Усі",
-      categories: { Racing: "Перегони", Automotive: "Автомобілі", Commerce: "Авто комерція", CarStories: "Car Stories" },
+      categories: { Racing: "Racing", Automotive: "Automotive", Commerce: "Auto Commerce", CarStories: "Car Stories" },
 
       services: [
-        { title: "Перегони",   desc: "Трек, піт-лейн, падок. Репортаж з гоночного вікенду та зйомка для команд і спонсорів." },
-        { title: "Автомобілі", desc: "Статика і ролінг-шоти. Зйомка автомобілів для дилерів, тюнінг-ательє та приватних власників." },
-        { title: "Авто комерція", desc: "Комерційна зйомка для брендів: предметка, лукбуки, рекламні кампанії та контент для соцмереж." },
+        { title: "Racing",        desc: "Трек, піт-лейн, падок. Репортаж з гоночного вікенду та зйомка для команд і спонсорів." },
+        { title: "Automotive",    desc: "Статика і ролінг-шоти. Зйомка автомобілів для дилерів, тюнінг-ательє та приватних власників." },
+        { title: "Auto Commerce", desc: "Комерційна зйомка для брендів: предметка, лукбуки, рекламні кампанії та контент для соцмереж." },
         { title: "Car Stories", desc: "Зйомка власників разом з їхніми машинами — в гаражі, у дворі, на улюбленій дорозі. Живі кадри про те, як люблять своє авто." }
       ],
 
@@ -267,11 +267,11 @@ window.SITE = {
 
       hero: {
         role: "Photographer",
-        tagline: "Racing · Automotive · Auto Commerce",
+        tagline: "Racing · Automotive · Auto Commerce · Car Stories",
         based: "Based in Odesa",
         available: "Available worldwide",
         scroll: "Scroll",
-        tags: ["01 — Racing", "02 — Automotive", "03 — Auto Commerce"]
+        tags: ["01 — Racing", "02 — Automotive", "03 — Auto Commerce", "04 — Car Stories"]
       },
 
       sections: {
