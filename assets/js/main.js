@@ -104,7 +104,7 @@
   /* рамка с фиксированной пропорцией + заглушка, если файла ещё нет */
   function frame(src, ratio, label) {
     return (
-      '<div class="frame" data-ratio="' + esc(ratio || 'landscape') + '">' +
+      '<div class="frame" data-ratio="' + esc(ratio || 'portrait') + '">' +
         '<img src="' + esc(src) + '" alt="' + esc(label || '') + '" loading="lazy" decoding="async">' +
         '<div class="ph">' + PH_ICON + '<span>' + esc(label || 'photo') + '</span></div>' +
       '</div>'
@@ -407,8 +407,8 @@
   function chrome() {
     $$('[data-name]').forEach(function (e) { e.textContent = S.name; });
     $$('[data-year]').forEach(function (e) { e.textContent = new Date().getFullYear(); });
-    $$('[data-email]').forEach(function (e) {
-      e.textContent = S.contact.email; e.setAttribute('href', 'mailto:' + S.contact.email);
+    $$('[data-tglink]').forEach(function (e) {
+      e.textContent = T('contactPage.tgLink'); e.setAttribute('href', S.contact.telegram);
     });
     $$('[data-phone]').forEach(function (e) {
       e.textContent = S.contact.phone; e.setAttribute('href', 'tel:' + S.contact.phone.replace(/\s/g, ''));
@@ -423,7 +423,7 @@
   }
 
   /* ============================================================
-     ФОРМА (без бэкенда — открывает почтовый клиент)
+     ФОРМА (без бэкенда — текст в буфер + открывает Telegram)
      ============================================================ */
   function form() {
     var f = $('[data-form]');
@@ -432,11 +432,18 @@
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var d = new FormData(f);
-      var body = T('contactPage.mailName') + ': ' + d.get('name') + '\n' +
+      var body = T('contactPage.mailSubject') + '\n' +
+                 T('contactPage.mailName') + ': ' + d.get('name') + '\n' +
                  T('contactPage.mailContact') + ': ' + d.get('contact') + '\n\n' + d.get('msg');
-      location.href = 'mailto:' + S.contact.email +
-        '?subject=' + encodeURIComponent(T('contactPage.mailSubject')) +
-        '&body=' + encodeURIComponent(body);
+
+      var note = f.querySelector('[data-note]');
+      function go() {
+        if (note) { note.textContent = T('contactPage.copied'); note.classList.add('is-on'); }
+        window.open(S.contact.telegram, '_blank', 'noopener');
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(body).then(go, go);
+      } else { go(); }
     });
   }
 

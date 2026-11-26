@@ -14,10 +14,9 @@ window.SITE = {
   name: "Tesliuk Tetiana",
 
   contact: {
-    email: "hello@tesliuk.com",
-    phone: "+380 00 000 00 00",
+    phone: "+380 66 597 10 51",
     instagram: "https://www.instagram.com/tes.look/",
-    telegram: "https://t.me/"
+    telegram: "https://t.me/teslook"
   },
 
   /* ---------------------------------------------------------
@@ -45,7 +44,7 @@ window.SITE = {
   /* ---------------------------------------------------------
      ПРОЕКТЫ — только структура.
      Названия, описания и локации — в i18n.<язык>.projects.<slug>
-     ratio: "portrait" | "landscape" | "square"
+     ratio: "portrait" (4:5) | "landscape" | "square"
      --------------------------------------------------------- */
   projects: [
     {
@@ -53,10 +52,10 @@ window.SITE = {
       category: "Racing",
       year: "2025",
       cover: "images/hero/drift-bmw.jpg",
-      ratio: "landscape",
+      ratio: "portrait",
       images: [
-        { src: "images/hero/drift-bmw.jpg", ratio: "landscape" },
-        { src: "images/hero/mechanic.jpg",  ratio: "landscape" }
+        { src: "images/hero/drift-bmw.jpg", ratio: "portrait" },
+        { src: "images/hero/mechanic.jpg",  ratio: "portrait" }
       ]
     },
     {
@@ -64,9 +63,9 @@ window.SITE = {
       category: "Racing",
       year: "2025",
       cover: "images/hero/drift-sunset.jpg",
-      ratio: "landscape",
+      ratio: "portrait",
       images: [
-        { src: "images/hero/drift-sunset.jpg", ratio: "landscape" }
+        { src: "images/hero/drift-sunset.jpg", ratio: "portrait" }
       ]
     },
     {
@@ -74,9 +73,9 @@ window.SITE = {
       category: "Automotive",
       year: "2025",
       cover: "images/hero/carwash.jpg",
-      ratio: "landscape",
+      ratio: "portrait",
       images: [
-        { src: "images/hero/carwash.jpg", ratio: "landscape" }
+        { src: "images/hero/carwash.jpg", ratio: "portrait" }
       ]
     },
     {
@@ -84,9 +83,9 @@ window.SITE = {
       category: "Automotive",
       year: "2024",
       cover: "images/hero/carina.jpg",
-      ratio: "landscape",
+      ratio: "portrait",
       images: [
-        { src: "images/hero/carina.jpg", ratio: "landscape" }
+        { src: "images/hero/carina.jpg", ratio: "portrait" }
       ]
     },
     {
@@ -94,9 +93,9 @@ window.SITE = {
       category: "Commerce",
       year: "2025",
       cover: "images/hero/hilux.jpg",
-      ratio: "landscape",
+      ratio: "portrait",
       images: [
-        { src: "images/hero/hilux.jpg", ratio: "landscape" }
+        { src: "images/hero/hilux.jpg", ratio: "portrait" }
       ]
     },
     {
@@ -104,9 +103,9 @@ window.SITE = {
       category: "Commerce",
       year: "2024",
       cover: "images/hero/driver.jpg",
-      ratio: "landscape",
+      ratio: "portrait",
       images: [
-        { src: "images/hero/driver.jpg", ratio: "landscape" }
+        { src: "images/hero/driver.jpg", ratio: "portrait" }
       ]
     }
   ],
@@ -166,9 +165,9 @@ window.SITE = {
 
       bio: [
         "Знімаю швидкість і речі, які її оточують. Перегони, автомобільна та комерційна зйомка — три різні дисципліни, в яких мене цікавить одне й те саме: момент, коли людина або машина перестають позувати.",
-        "Працюю з гоночними командами, автомобільними брендами та приватними клієнтами. Знімаю на треку, в студії та на локації — в Україні та по Європі."
+        "Працюю з гоночними командами, автомобільними брендами та приватними клієнтами. Знімаю на треку, в студії та на локації по всій Україні."
       ],
-      facts: ["років знімаю", "гоночних вікендів", "зйомок", "країн"],
+      facts: ["років знімаю", "гоночних вікендів", "зйомок"],
 
       teaser: "Мене цікавить момент, коли людина або машина перестають позувати. На треку це частки секунди, у студії — година тиші.",
       more: "Детальніше про мене →",
@@ -220,13 +219,15 @@ window.SITE = {
         socials: "Соцмережі",
         base: "База",
         baseValue: "Одеса, UA — зйомки по всьому світу",
+        tgLink: "Звʼязок в Telegram",
         formName: "Як вас звати",
-        formContact: "Пошта або телеграм",
+        formContact: "Телеграм або телефон",
         formMsg: "Про зйомку",
         send: "Надіслати",
         mailSubject: "Заявка з сайту",
         mailName: "Імʼя",
-        mailContact: "Контакт"
+        mailContact: "Контакт",
+        copied: "Текст скопійовано — вставте його в чат"
       },
 
       footer: { big1: "Працюймо", big2: "разом" }
@@ -279,9 +280,9 @@ window.SITE = {
 
       bio: [
         "I shoot speed and the things around it. Racing, automotive and commercial work — three different disciplines where I’m after the same thing: the moment a person or a car stops posing.",
-        "I work with racing teams, car brands and private clients. On track, in the studio and on location — across Ukraine and Europe."
+        "I work with racing teams, car brands and private clients. On track, in the studio and on location across Ukraine."
       ],
-      facts: ["years shooting", "race weekends", "shoots", "countries"],
+      facts: ["years shooting", "race weekends", "shoots"],
 
       teaser: "I’m after the moment a person or a car stops posing. On track that’s a fraction of a second; in the studio, an hour of silence.",
       more: "More about me →",
@@ -333,13 +334,15 @@ window.SITE = {
         socials: "Socials",
         base: "Based",
         baseValue: "Odesa, UA — shooting worldwide",
+        tgLink: "Message on Telegram",
         formName: "Your name",
-        formContact: "Email or telegram",
+        formContact: "Telegram or phone",
         formMsg: "About the shoot",
         send: "Send",
         mailSubject: "Enquiry from the website",
         mailName: "Name",
-        mailContact: "Contact"
+        mailContact: "Contact",
+        copied: "Text copied — paste it into the chat"
       },
 
       footer: { big1: "Let’s", big2: "work" }
