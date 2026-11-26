@@ -10,7 +10,7 @@
   --fg:        #EDEDED;
   --fg-dim:    #8C8C8C;
   --fg-faint:  #5A5A5A;
-  --accent:    #E23A24;
+  --accent:    #FFFFFF;      /* акцент остаётся белым: эстетика ч/б */
 
   --pad: clamp(20px, 4vw, 64px);
   --gap: clamp(16px, 2vw, 32px);
@@ -42,7 +42,7 @@ img{ display:block; max-width:100%; }
 a{ color:inherit; text-decoration:none; }
 button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
 
-::selection{ background:var(--accent); color:#fff; }
+::selection{ background:var(--fg); color:var(--bg); }
 
 /* ---------- film grain over everything ---------- */
 .grain{
@@ -459,7 +459,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 .srv__row:hover > *{ transform:translateX(clamp(18px,3.4vw,56px)); }
 .srv__row:hover::before{ transform:scaleX(1); }
 .srv__row:hover .srv__n{ color:var(--fg); }
-.srv__row:hover .srv__t{ color:var(--accent); }
+.srv__row:hover .srv__t{ color:var(--fg); }
 .srv__row:hover .srv__d{ color:var(--fg); }
 
 /* соседние строки в это время притухают */
@@ -468,7 +468,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 
 /* подпись под формой: появляется после отправки */
 .form__note{
-  grid-column:1 / -1; margin:14px 0 0; color:var(--accent);
+  grid-column:1 / -1; margin:14px 0 0; color:var(--fg);
   opacity:0; transform:translateY(6px);
   transition:opacity .5s var(--ease), transform .5s var(--ease);
 }
