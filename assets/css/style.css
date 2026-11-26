@@ -83,6 +83,13 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   letter-spacing:-.025em;
   font-weight:400;
 }
+/* крупный тизер в разделе About на главной */
+.lead--big{
+  font-size:clamp(28px,3.6vw,50px);
+  line-height:1.14;
+  letter-spacing:-.04em;
+  max-width:30ch;
+}
 
 /* ---------- link with sliding underline ---------- */
 .ul{ position:relative; display:inline-block; }
@@ -341,7 +348,11 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 .frame{
   position:relative; overflow:hidden;
   background:var(--bg-2);
+  transform:perspective(1100px);
+  transition:transform .6s var(--slow), box-shadow .6s var(--ease);
+  will-change:transform;
 }
+.frame.is-lit{ box-shadow:0 32px 70px rgba(0,0,0,.65); z-index:2; }
 .frame::before{ content:""; display:block; padding-top:125%; }   /* 4:5 по умолчанию */
 .frame[data-ratio="landscape"]::before{ padding-top:66.6%; }
 .frame[data-ratio="portrait"]::before{ padding-top:125%; }   /* 4 x 5 */
@@ -356,6 +367,9 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   filter:grayscale(1) contrast(1.04);
 }
 .card:hover .frame img{ transform:scale(1.05); filter:grayscale(0) contrast(1.02); }
+
+/* галерея проекта: кадры сразу в цвете */
+.shot .frame img{ filter:none; }
 
 /* одиночная рамка (портрет на About): ч/б -> цвет при наведении */
 .frame--color img{
@@ -550,7 +564,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   border-top:1px solid var(--line-soft);
   padding:clamp(40px,5vw,70px) var(--pad) 26px;
 }
-.ftr__big{ font-size:clamp(40px,12vw,180px); font-weight:600; letter-spacing:-.05em; line-height:.86; margin:0 0 clamp(30px,5vw,70px); }
+.ftr__big{ font-size:clamp(30px,8.4vw,128px); font-weight:600; letter-spacing:-.05em; line-height:1; margin:0 0 clamp(30px,5vw,70px); white-space:nowrap; }
 .ftr__row{ display:flex; justify-content:space-between; gap:var(--gap); flex-wrap:wrap; }
 .ftr__links{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
 .ftr__links .ig{ width:38px; height:38px; }

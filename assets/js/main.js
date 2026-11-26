@@ -249,12 +249,23 @@
       else { img.addEventListener('error', fail); }
     });
 
+    tilt($$('.fcard', el), 1.05);
+  }
+
+  /* ============================================================
+     3D-НАКЛОН: карточка ведёт себя как физическая и
+     поворачивается от положения мыши. Движение не останавливается.
+     ============================================================ */
+  function tilt(cards, zoom) {
     if (window.matchMedia('(hover:none)').matches) return;
 
-    /* карточка ведёт себя как физическая: поворачивается от положения мыши.
-       Лента при этом не останавливается. */
-    var MAX = 11; /* градусов */
-    $$('.fcard', el).forEach(function (card) {
+    var MAX = 11;            /* градусов */
+    var Z = zoom || 1.03;
+
+    cards.forEach(function (card) {
+      if (card.dataset.tilt) return;
+      card.dataset.tilt = '1';
+
       card.addEventListener('mouseenter', function () {
         card.classList.add('is-lit');
         card.style.transition = 'transform .25s var(--ease), box-shadow .6s var(--ease)';
@@ -266,7 +277,7 @@
         card.style.transform =
           'perspective(1100px) rotateY(' + (px * MAX * 2).toFixed(2) + 'deg)' +
           ' rotateX(' + (-py * MAX * 2).toFixed(2) + 'deg)' +
-          ' scale(1.05)';
+          ' scale(' + Z + ')';
       });
       card.addEventListener('mouseleave', function () {
         card.classList.remove('is-lit');
@@ -299,6 +310,7 @@
     }).join('');
 
     watchImages(wrap);
+    tilt($$('.card .frame', wrap));
 
     var f = $('[data-filter]');
     if (!f) return;
@@ -399,6 +411,7 @@
     nx.setAttribute('href', 'project.html?p=' + next.slug);
 
     watchImages(root);
+    tilt($$('.shot .frame', root));
   }
 
   /* ============================================================
