@@ -310,7 +310,6 @@
     }).join('');
 
     watchImages(wrap);
-    tilt($$('.card .frame', wrap));
 
     var f = $('[data-filter]');
     if (!f) return;
@@ -411,7 +410,6 @@
     nx.setAttribute('href', 'project.html?p=' + next.slug);
 
     watchImages(root);
-    tilt($$('.shot .frame', root));
   }
 
   /* ============================================================

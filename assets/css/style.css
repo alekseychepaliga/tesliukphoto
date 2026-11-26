@@ -347,11 +347,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 .frame{
   position:relative; overflow:hidden;
   background:var(--bg-2);
-  transform:perspective(1100px);
-  transition:transform .6s var(--slow), box-shadow .6s var(--ease);
-  will-change:transform;
 }
-.frame.is-lit{ box-shadow:0 32px 70px rgba(0,0,0,.65); z-index:2; }
 .frame::before{ content:""; display:block; padding-top:125%; }   /* 4:5 по умолчанию */
 .frame[data-ratio="landscape"]::before{ padding-top:66.6%; }
 .frame[data-ratio="portrait"]::before{ padding-top:125%; }   /* 4 x 5 */
