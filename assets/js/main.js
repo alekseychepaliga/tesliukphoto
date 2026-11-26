@@ -365,6 +365,43 @@
   }
 
   /* ============================================================
+     СЧЁТЧИКИ: цифры набегают от нуля, когда блок появляется
+     ============================================================ */
+  function counters() {
+    var els = $$('[data-count]');
+    if (!els.length) return;
+
+    var slow = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+    function run(el) {
+      var to = parseFloat(el.dataset.count) || 0;
+      var suf = el.dataset.suffix || '';
+      if (slow) { el.textContent = to + suf; return; }
+
+      var DUR = 1400, t0 = 0;
+      function step(t) {
+        if (!t0) t0 = t;
+        var k = Math.min((t - t0) / DUR, 1);
+        var e = 1 - Math.pow(1 - k, 3);            /* мягкое торможение */
+        el.textContent = Math.round(to * e) + suf;
+        if (k < 1) requestAnimationFrame(step);
+      }
+      el.textContent = '0' + suf;
+      requestAnimationFrame(step);
+    }
+
+    var io = new IntersectionObserver(function (rows) {
+      rows.forEach(function (r) {
+        if (!r.isIntersecting || r.target.dataset.done) return;
+        r.target.dataset.done = '1';
+        run(r.target);
+      });
+    }, { threshold: .4 });
+
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ============================================================
      PROJECT PAGE
      ============================================================ */
   function project() {
@@ -466,6 +503,7 @@
     grid();
     services();
     bio();
+    counters();
     project();
     form();
     reveal();
