@@ -107,6 +107,16 @@ window.SITE = {
       images: [
         { src: "images/hero/driver.jpg", ratio: "portrait" }
       ]
+    },
+    {
+      slug: "garage-light",
+      category: "CarStories",
+      year: "2025",
+      cover: "images/hero/mechanic.jpg",
+      ratio: "portrait",
+      images: [
+        { src: "images/hero/mechanic.jpg", ratio: "portrait" }
+      ]
     }
   ],
 
@@ -146,7 +156,7 @@ window.SITE = {
         selectedWork: "Вибрані роботи",
         whatIShoot:   "Що я знімаю",
         services:     "Послуги",
-        servicesNum:  "01 — 03",
+        servicesNum:  "01 — 04",
         about:        "Про мене",
         aboutSub:     "Тетяна Теслюк — фотографка",
         intro:        "Вступ",
@@ -155,12 +165,13 @@ window.SITE = {
       },
 
       filterAll: "Усі",
-      categories: { Racing: "Перегони", Automotive: "Автомобілі", Commerce: "Авто комерція" },
+      categories: { Racing: "Перегони", Automotive: "Автомобілі", Commerce: "Авто комерція", CarStories: "Історії з авто" },
 
       services: [
         { title: "Перегони",   desc: "Трек, піт-лейн, падок. Репортаж з гоночного вікенду та зйомка для команд і спонсорів." },
         { title: "Автомобілі", desc: "Статика і ролінг-шоти. Зйомка автомобілів для дилерів, тюнінг-ательє та приватних власників." },
-        { title: "Авто комерція", desc: "Комерційна зйомка для брендів: предметка, лукбуки, рекламні кампанії та контент для соцмереж." }
+        { title: "Авто комерція", desc: "Комерційна зйомка для брендів: предметка, лукбуки, рекламні кампанії та контент для соцмереж." },
+        { title: "Історії з авто", desc: "Зйомка власників разом з їхніми машинами — в гаражі, у дворі, на улюбленій дорозі. Живі кадри про те, як люблять своє авто." }
       ],
 
       bio: [
@@ -209,6 +220,12 @@ window.SITE = {
           title: "Lookbook",
           location: "Студія",
           intro: "Сезонний лукбук для локального бренду. Рівне світло, чистий фон і сто кадрів, з яких у каталог пішло двадцять.",
+          captions: [""]
+        },
+        "garage-light": {
+          title: "Garage Light",
+          location: "Гараж",
+          intro: "Вечір у гаражі з власником і його машиною. Руки в мастилі, лампа під стелею і розмова, яка триває довше за зйомку.",
           captions: [""]
         }
       },
@@ -261,7 +278,7 @@ window.SITE = {
         selectedWork: "Selected Work",
         whatIShoot:   "What I shoot",
         services:     "Services",
-        servicesNum:  "01 — 03",
+        servicesNum:  "01 — 04",
         about:        "About",
         aboutSub:     "Tetiana Tesliuk — Photographer",
         intro:        "Intro",
@@ -270,12 +287,13 @@ window.SITE = {
       },
 
       filterAll: "All",
-      categories: { Racing: "Racing", Automotive: "Automotive", Commerce: "Auto Commerce" },
+      categories: { Racing: "Racing", Automotive: "Automotive", Commerce: "Auto Commerce", CarStories: "Car Stories" },
 
       services: [
         { title: "Racing",     desc: "Track, pit lane, paddock. Race-weekend reportage and shoots for teams and sponsors." },
         { title: "Automotive", desc: "Static and rolling shots. Cars for dealers, tuning shops and private owners." },
-        { title: "Auto Commerce", desc: "Commercial work for brands: product, lookbooks, campaigns and social content." }
+        { title: "Auto Commerce", desc: "Commercial work for brands: product, lookbooks, campaigns and social content." },
+        { title: "Car Stories", desc: "Owners together with their cars — in the garage, in the yard, on a favourite road. Living frames about loving your car." }
       ],
 
       bio: [
@@ -324,6 +342,12 @@ window.SITE = {
           title: "Lookbook",
           location: "Studio",
           intro: "A seasonal lookbook for a local brand. Even light, a clean backdrop and a hundred frames, twenty of which made the catalogue.",
+          captions: [""]
+        },
+        "garage-light": {
+          title: "Garage Light",
+          location: "Garage",
+          intro: "An evening in the garage with an owner and his car. Oil on his hands, a lamp under the ceiling and a conversation that outlasts the shoot.",
           captions: [""]
         }
       },
