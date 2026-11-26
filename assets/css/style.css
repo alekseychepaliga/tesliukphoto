@@ -313,7 +313,6 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 .sec__head{
   display:flex; justify-content:space-between; align-items:baseline;
   gap:var(--gap); padding-bottom:18px; margin-bottom:clamp(28px,4vw,54px);
-  border-bottom:1px solid var(--line-soft);
   flex-wrap:wrap;
 }
 .sec__title{ font-size:clamp(26px,4vw,52px); font-weight:600; letter-spacing:-.04em; margin:0; }
