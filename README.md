@@ -42,7 +42,7 @@ Netlify выдаст адрес сайта. Его нужно прописать
 
 ```
 cd tesliuk-photo
-grep -rl "tesliuk-tetiana.netlify.app" . | xargs sed -i '' "s|https://tesliuk-tetiana.netlify.app|https://НОВЫЙ-АДРЕС|g"
+grep -rl "tesliukphoto.netlify.app" . | xargs sed -i '' "s|https://tesliukphoto.netlify.app|https://НОВЫЙ-АДРЕС|g"
 ```
 
 (меняется в `*.html`, `robots.txt` и `sitemap.xml`)
