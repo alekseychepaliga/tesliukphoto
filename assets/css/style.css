@@ -229,17 +229,18 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 /* ---- плывущий коллаж на первом экране ---- */
 .hero__flow{
   --k:1;                      /* множитель масштаба раскладки */
+  --sp:1.08;                  /* множитель промежутков между кадрами */
   position:absolute; inset:0; z-index:1;
   overflow:hidden; pointer-events:none;
 }
 .flow__track{
   position:absolute; top:0; left:0;
   height:100%; display:flex; width:max-content;
-  animation:flowroll 64s linear infinite;
+  animation:flowroll 53s linear infinite;
 }
 .flow__row{
   position:relative; flex:none;
-  width:calc(100vw * var(--k)); height:100%;
+  width:calc(100vw * var(--k) * var(--sp)); height:100%;
 }
 @keyframes flowroll{ to{ transform:translateX(-50%); } }
 
@@ -253,7 +254,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 
 .fcard{
   position:absolute;
-  left:calc(var(--x) * 1vw * var(--k));
+  left:calc(var(--x) * 1vw * var(--k) * var(--sp));
   top:calc(var(--t) * 1vh);
   width:calc(var(--w) * 1vw * var(--k));
   aspect-ratio:var(--r);

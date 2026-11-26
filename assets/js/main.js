@@ -259,7 +259,7 @@
   function tilt(cards, zoom) {
     if (window.matchMedia('(hover:none)').matches) return;
 
-    var MAX = 3.7;           /* градусов */
+    var MAX = 11;            /* градусов */
     var Z = zoom || 1.03;
 
     cards.forEach(function (card) {
