@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tesliuk-tetiana.netlify.app/sitemap.xml

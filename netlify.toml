@@ -1,0 +1,39 @@
+# Статический сайт: собирать нечего, Netlify просто раздаёт папку.
+
+[build]
+  publish = "."
+  command = ""
+
+# ---------- заголовки ----------
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# html отдаём всегда свежий, иначе правки не доедут до посетителя
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# тексты сайта меняются часто — тоже без долгого кеша
+[[headers]]
+  for = "/assets/js/data.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# стили и скрипты
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# фотографии не меняются — кешируем надолго
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
